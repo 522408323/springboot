@@ -10,7 +10,7 @@ spring:
       #基本属性
       url: jdbc:mysql://localhost:3306/boot?&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
       username: root
-      password: root
+      password: 123456 #root
       #配置初始化大小/最小/最大
       initial-size: 1
       min-idle: 1
@@ -31,8 +31,9 @@ spring:
       connectionProperties: druid.stat.mergeSql=true
   data:
     mongodb:
-      database: boot_mongo
-      uri: mongodb://localhost:27017
+      #database: boot_mongo
+      #uri: mongodb://localhost:27017
+      uri: mongodb://root:hezidevmg@192.144.135.58:27017/jdbbTest
   servlet:
     multipart:
       max-file-size: 3MB

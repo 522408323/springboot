@@ -15,7 +15,7 @@ public interface BaseMapper<T extends BaseEntity> {
 	    /**
 	     * 根据主键批量删除
 	     * 默认关闭此功能，如果需要，请修改mapping.xml
-	     * @param ids
+	     * @param id
 	     * @return 影响条数
 	     */
 	    public int deleteByPrimaryKeyBatch(Long... id);
@@ -48,7 +48,7 @@ public interface BaseMapper<T extends BaseEntity> {
 	    
 	    /**
 	     * 按主键查询列表
-	     * @param id
+	     * @param ids
 	     * @return
 	     */
 	    public List<T> selectByPrimaryKeys(Long... ids);
@@ -81,7 +81,7 @@ public interface BaseMapper<T extends BaseEntity> {
 
 	    /**
 	     * 查询下一个可用的id
-	     * @param record
+	     * @param
 	     * @return
 	     */
 	    public Long getNextUsefulId();

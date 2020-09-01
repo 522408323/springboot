@@ -14,6 +14,13 @@ CREATE TABLE `t_user` (
   UNIQUE KEY `index_mobile` (`mobile`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
 
+insert into t_user(create_time,user_name,`password`,salt,mobile,email,nick_name,head_img_url,`status`)
+VALUES(SYSDATE(),'张三','123456','abc','13010001000','12345@qq.com','哈哈','http://www.baidu.com',1),
+(SYSDATE(),'张4','123456','abc','13010001001','12367@qq.com','哈哈1','http://www.baidu.com',1),
+(SYSDATE(),'张5','123456','abc','13010001002','123fd@qq.com','哈哈2','http://www.baidu.com',1),
+(SYSDATE(),'张6','123456','abc','13010001003','123tg@qq.com','哈哈3','http://www.baidu.com',1),
+(SYSDATE(),'张7','123456','abc','13010001004','123hhh@qq.com','哈哈4','http://www.baidu.com',1);
+
 -- mongodb数据库
 use boot_mongo--切换/创建mongodb数据库
 -- 创建表

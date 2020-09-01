@@ -1,5 +1,7 @@
 package com.lyx.houtai.service.impl;
 
+import com.alibaba.fastjson.JSON;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,16 +14,22 @@ import com.lyx.houtai.service.IUserService;
 
 @Service
 @Transactional
+@Slf4j
 public class IUserServiceImpl implements IUserService {
-	
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
     @Autowired
 	private UserMapper userMapper;
-	
+
+    @Override
 	public User queryUserById(Long id) {
-		logger.debug("查询id:【"+id+"】数据");
+		log.info("查询id:【"+id+"】数据");
 		return userMapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public int insertRecord(User user) {
+		log.info("查询id:【{}】数据",JSON.toJSONString(user));
+		return userMapper.insert(user);
 	}
 
 }

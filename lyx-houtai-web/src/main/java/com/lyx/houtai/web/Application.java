@@ -1,5 +1,6 @@
 package com.lyx.houtai.web;
 
+import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,10 +13,11 @@ import com.lyx.houtai.mongodb.repository.SchoolInfoRepository;
 @SpringBootApplication(scanBasePackages = "com.lyx")
 @MapperScan({"com.lyx.houtai.mapper"})
 @EnableMongoRepositories(basePackages="com.lyx.houtai.mongodb.repository")
+@Slf4j
 public class Application {
 
 	public static void main(String[] args) {
-		System.out.println("===========houtai===Application=====begin===");
+		log.info("===========houtai===Application:{}=====begin===","sssssssss");
 		ConfigurableApplicationContext context = SpringApplication.run(Application.class,args);
 		Environment env = context.getEnvironment();
 		System.out.println("==datasource.name:=="+env.getProperty("spring.datasource.name")+"=====spring.application.name:"+env.getProperty("spring.application.name"));
