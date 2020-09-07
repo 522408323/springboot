@@ -3,6 +3,8 @@ package com.lyx.houtai.mongodb.repository;
 import com.alibaba.fastjson.JSON;
 import com.lyx.houtai.facade.StudentPageParam;
 import com.lyx.houtai.mongodb.model.StudentInfo;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -89,4 +91,10 @@ public class StudentMongodbDao {
         List<StudentInfo> list = mongoTemplate.find(query,StudentInfo.class);
         return list;
     }
+
+    public static void main(String[] args) {
+
+
+    }
+
 }
